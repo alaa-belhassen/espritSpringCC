@@ -1,11 +1,10 @@
 package com.example.springproject.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+
 @Entity
 public class Bloc implements Serializable {
     @Id
@@ -13,5 +12,8 @@ public class Bloc implements Serializable {
     private Long idBloc;
     private String nomBloc;
     private long capaciteBloc;
-
+    @OneToMany(mappedBy = "bloc")
+    private ArrayList<Chambre> chambre;
+    @ManyToOne
+    private Foyer foyer;
 }

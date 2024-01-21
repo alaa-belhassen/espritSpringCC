@@ -1,9 +1,6 @@
 package com.example.springproject.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 @Entity
@@ -13,4 +10,6 @@ public class Universite implements Serializable {
     private Long idUniversite;
     private String nomUniversite;
     private String adresse;
+    @OneToOne
+    private Foyer foyer;
 }

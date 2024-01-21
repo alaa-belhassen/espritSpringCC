@@ -3,6 +3,7 @@ package com.example.springproject.models;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
@@ -17,4 +18,7 @@ public class Etudiant implements Serializable {
     private String ecole;
     @Temporal(TemporalType.DATE)
     private Date dateNaissance;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private ArrayList<Reservation> reservations ;
 }
