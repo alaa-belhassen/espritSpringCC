@@ -2,6 +2,7 @@ package com.example.springproject.service;
 
 import com.example.springproject.models.Reservation;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -12,5 +13,5 @@ public interface IReservationService {
     Reservation retrieveReservation(String idReservation);
     void removeReservation(String idReservation);
     List<Reservation> addReservations (List<Reservation> reservations);
-    List<Reservation>  findByAnneUniversitaireBetween(Date date_debut, Date date_fin);
+    List<Reservation>  findByAnneUniversitaireBetween(LocalDate date_debut, LocalDate date_fin);
 }

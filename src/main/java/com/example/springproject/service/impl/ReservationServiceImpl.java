@@ -6,6 +6,7 @@ import com.example.springproject.service.IReservationService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -46,7 +47,7 @@ public class ReservationServiceImpl implements IReservationService {
     }
 
     @Override
-    public List<Reservation> findByAnneUniversitaireBetween(Date date_debut, Date date_fin) {
-        return findByAnneUniversitaireBetween(date_debut,date_fin);
+    public List<Reservation> findByAnneUniversitaireBetween(LocalDate date_debut, LocalDate date_fin) {
+        return etudiantRepository.findByAnneUniversitaireBetween(date_debut,date_fin);
     }
 }
